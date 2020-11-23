@@ -30,5 +30,11 @@ namespace Backend
             var (inList, outList) = _fSharpFinder.Process();
             return (inList, outList);
         }
+
+        public static (List<Double>, List<double>)UnzipComplexList(List<Complex> list)
+        {
+            var (xs, ys) = FSharpFinder.UnzipComplexListIntoTwo(list);
+            return (xs, ys);
+        }
     }
 }

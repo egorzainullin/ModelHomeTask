@@ -2,6 +2,7 @@
 
 open System.Numerics
 open System.Collections.Generic
+open FSharpBackend
 
 type FSharpFinder(minVal: double, maxVal: double, z0: Complex, c: Complex) =
     
@@ -15,5 +16,14 @@ type FSharpFinder(minVal: double, maxVal: double, z0: Complex, c: Complex) =
         let goodList = List(Seq.ofList good)
         let badList = List(Seq.ofList bad)
         (goodList, badList)
+        
+    static member UnzipComplexListIntoTwo(listCSharp: ResizeArray<_>) =
+        let list = Seq.toList listCSharp
+        let newList = list |> List.map (Core.unwrap)
+        let leftList = ResizeArray(List.map fst newList)
+        let rightList = ResizeArray(List.map snd newList)
+        (leftList, rightList)
+    
+        
         
 
