@@ -43,9 +43,10 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Library1.fs" />
+    <Compile Include="Core.fs" />
     <None Include="Script.fsx" />
     <Content Include="packages.config" />
+    <Compile Include="FSharpFinder.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">
