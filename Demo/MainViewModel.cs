@@ -8,11 +8,15 @@
     {
         public MainViewModel()
         {
-            this.MyModel = new PlotModel {Title = "MyPlot"};
+            this.Model = new PlotModel {Title = "MyPlot"};
 
-            this.MyModel.Series.Add(new FunctionSeries(Math.Cos, 0, 10, 0.1, "cos(x)"));
+            // this.MyModel.Series.Add(new FunctionSeries(Math.Cos, 0, 10, 0.1, "cos(x)"));
+            var scatter = new ScatterPoint(100, 100);
+            var scatterSeries = new ScatterSeries { MarkerType = MarkerType.Circle };
+            scatterSeries.Points.Add(scatter);
+            Model.Series.Add(scatterSeries);
         }
 
-        public PlotModel MyModel { get; private set; }
+        public PlotModel Model { get; private set; }
     }
 }
