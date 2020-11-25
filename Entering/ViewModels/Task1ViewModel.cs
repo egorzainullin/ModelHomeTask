@@ -15,8 +15,8 @@ namespace Entering.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         
-        public Complex ZValue { get; set; }
-
-        public string Test { get; set; } 
+        public double Real { get; set; }
+        
+        public double Imaginary { get; set; }
     }
 }

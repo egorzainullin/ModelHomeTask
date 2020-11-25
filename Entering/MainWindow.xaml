@@ -4,22 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Entering"
-        xmlns:viewmodels="clr-namespace:Entering.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="525">
     <Grid>
         <TabControl>
             <TabItem Header="Task1">
                 <TabItem.Content>
-                    <StackPanel>
-                        <TextBlock>Input complex parameter, for instance: 1.0 + 2.0 i </TextBlock>
-                        <TextBox Text="{Binding Test}"/>
-                        <Button Content="Start" Height = "109" Margin="140,0,156.8,0"/>
-                    </StackPanel>
+                    <Canvas>
+                        <TextBlock Canvas.Left="86">Input complex parameter, left part - real, right - imaginary</TextBlock>
+                        <TextBox Text="{Binding Real}" Width="100" Canvas.Left="266" Canvas.Top="33" />
+                        <TextBox Text="{Binding Imaginary}" Width="100" Canvas.Left="106" Canvas.Top="33" />
+                        <Button Content="Start" Height="109" Canvas.Left="106" Canvas.Top="56" Width="260" />
+                    </Canvas>
                 </TabItem.Content>
-               
+
             </TabItem>
-            <TabItem Header="Task3"></TabItem>
+            <TabItem Header="Task3" />
         </TabControl>
     </Grid>
 </Window>

@@ -10,7 +10,7 @@
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new Task1ViewModel();
+            // this.DataContext = new Task1ViewModel();
         }
     }
 }
