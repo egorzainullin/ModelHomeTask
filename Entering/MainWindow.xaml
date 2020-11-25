@@ -4,18 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Entering"
+        xmlns:viewmodels="clr-namespace:Entering.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="450" Width="525">
     <Grid>
         <TabControl>
             <TabItem Header="Task1">
                 <TabItem.Content>
                     <StackPanel>
-                        <TextBlock>Введите данные</TextBlock>
-                        <Button Content="Start" Margin="43,189,43,67.8"/>
-                        
+                        <TextBlock>Input complex parameter, for instance: 1.0 + 2.0 i </TextBlock>
+                        <TextBox Text="{Binding Test}"/>
+                        <Button Content="Start" Height = "109" Margin="140,0,156.8,0"/>
                     </StackPanel>
-                    
                 </TabItem.Content>
                
             </TabItem>
