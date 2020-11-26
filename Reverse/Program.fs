@@ -64,6 +64,8 @@ module Chart =
     let chartHtml = chart.GetHtml()
     System.IO.File.WriteAllText("../../chart.html", chartHtml)    
         
-    Chart.Show chart
+
+    
+    
     
     

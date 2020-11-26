@@ -224,6 +224,7 @@
         <Compile Include="Program.fs" />
         <Content Include="Google.DataTable.Net.Wrapper.XML" />
         <Content Include="packages.config" />
+        <Compile Include="RevereseRunner.fs" />
     </ItemGroup>
     <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
 </Project>

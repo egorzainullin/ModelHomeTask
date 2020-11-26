@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Entering.Properties
+namespace GuiForTasks.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -45,7 +45,7 @@ namespace Entering.Properties
                 if ((resourceMan == null))
                 {
                     global::System.Resources.ResourceManager temp =
-                        new global::System.Resources.ResourceManager("Entering.Properties.Resources",
+                        new global::System.Resources.ResourceManager("GuiForTasks.Properties.Resources",
                             typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
