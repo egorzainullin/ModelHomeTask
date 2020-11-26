@@ -18,7 +18,7 @@ module Runner =
             member this.Run() =
                 let form = new Form()
                 let label =
-                    new Label(Text = "Input, up block - real, below - i imaginary", Width=500)
+                    new Label(Text = "Input, left - real, right - i imaginary", Width=500)
                 let button = new Button(Text = "Start")
                 button.Click.Add(fun _ -> drawPlot())
                 let textBlock1 = new TextBox(Width=200)
@@ -31,12 +31,11 @@ module Runner =
                 form.Controls.Add(panel)
                 form.Size <- new Size(400, 400)
                 Application.Run(form)
-                0
 
         end
     
     [<EntryPoint>]
     let main argv =
         let runner = new ReverseRunner(Complex(0.0, 0.0))
-        runner.Run()
+        runner.Run() 
         0 // return an integer exit code
