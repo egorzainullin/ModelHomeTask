@@ -8,8 +8,6 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Iterations", "Iterations\It
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing Console", "Testing Console\Testing Console.csproj", "{EF8A7390-F238-403A-A1D1-5E42A17F9BFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiForTasks", "GuiForTasks\GuiForTasks.csproj", "{2129568F-C22F-4CA2-AB76-75C6CF2AE76F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,9 +30,5 @@ Global
 		{EF8A7390-F238-403A-A1D1-5E42A17F9BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF8A7390-F238-403A-A1D1-5E42A17F9BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF8A7390-F238-403A-A1D1-5E42A17F9BFF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2129568F-C22F-4CA2-AB76-75C6CF2AE76F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2129568F-C22F-4CA2-AB76-75C6CF2AE76F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2129568F-C22F-4CA2-AB76-75C6CF2AE76F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2129568F-C22F-4CA2-AB76-75C6CF2AE76F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
