@@ -63,9 +63,9 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(158, 177);
+            this.label1.Location = new System.Drawing.Point(133, 176);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(407, 68);
+            this.label1.Size = new System.Drawing.Size(435, 68);
             this.label1.TabIndex = 3;
             this.label1.Text = "Метод обратных итерация для уравнения:  z^3 + c. \r\nВнизу можно ввести c: веществе" + "нную и мнимую сверху вниз\r\n\r\n\r\n\r\n";
             // 
