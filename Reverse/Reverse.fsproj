@@ -6,7 +6,7 @@
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{1BC4BA53-FF62-4A91-8AAC-69230F94CA80}</ProjectGuid>
-        <OutputType>Exe</OutputType>
+        <OutputType>WinExe</OutputType>
         <RootNamespace>Reverse</RootNamespace>
         <AssemblyName>Reverse</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>

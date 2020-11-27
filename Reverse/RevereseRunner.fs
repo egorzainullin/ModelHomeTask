@@ -11,19 +11,13 @@ open Reverse.Converter
 
 type ReverseRunner() =
     class
-        let form = new Form()
-        let textBlock1 = new TextBox(Width = 200, Text = "1")
-        let textBlock2 = new TextBox(Width = 200, Text = "0")
-
         let getValuesTextBoxes text1 text2 =
 
             match tryParseDouble text1, tryParseDouble text2 with
             | (Some a, Some b) -> Some((a, b))
             | _ -> None
 
-        let drawPlot () =
-            let text1 = textBlock1.Text
-            let text2 = textBlock2.Text
+        let drawPlot (text1, text2) =
             match getValuesTextBoxes text1 text2 with
             | Some (re, im) ->
                 let k = Init.iterNumber
@@ -49,19 +43,7 @@ type ReverseRunner() =
                 0 |> ignore
             | None -> MessageBox.Show("Incorrect input") |> ignore
 
-        member this.Run() =
-            let label =
-                new Label(Text = "Input, upper - real, below - i imaginary", Width = 500)
-
-            let button = new Button(Text = "Start")
-            button.Click.Add(fun _ -> do drawPlot () |> ignore)
-            let panel = new FlowLayoutPanel()
-            panel.Controls.Add(label)
-            panel.Controls.Add(textBlock1)
-            panel.Controls.Add(textBlock2)
-            panel.Controls.Add(button)
-            form.Controls.Add(panel)
-            form.Size <- new Size(400, 400)
-            Application.Run(form)
+        member this.Run(text1, text2) =
+            drawPlot(text1, text2)
     end
 

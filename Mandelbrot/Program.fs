@@ -47,6 +47,8 @@ module Core =
 
                 if count = iter then image.SetPixel(x, y, Color.Red) else image.SetPixel(x, y, colorize (count))
         let temp = new Form()
+        let label = new Label(Text = "Picture for Mandelbrot: z^3 + с", Width=400)
+        temp.Controls.Add(label)
         temp.Paint.Add(fun e -> e.Graphics.DrawImage(image, 0, 0))
         temp.Size <- new Size(400, 400)
         temp

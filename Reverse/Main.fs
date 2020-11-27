@@ -4,7 +4,5 @@ open System.Numerics
 open Reverse.Chart
 
 [<EntryPoint>]
-let main argv =
-    let runner = new ReverseRunner()
-    runner.Run()
+let main _ =
     0 // return an integer exit code
