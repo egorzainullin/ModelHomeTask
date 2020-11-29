@@ -226,7 +226,6 @@
         <Content Include="packages.config" />
         <Compile Include="Converter.fs" />
         <Compile Include="RevereseRunner.fs" />
-        <Compile Include="Main.fs" />
     </ItemGroup>
     <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
 </Project>

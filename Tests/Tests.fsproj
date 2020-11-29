@@ -52,8 +52,14 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="AssemblyInfo.fs" />
-        <Compile Include="Program.fs" />
+        <Compile Include="IterationsTests.fs" />
         <Content Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Iterations\Iterations.fsproj">
+        <Project>{8ffbd204-321e-43aa-ab58-f11276a5db40}</Project>
+        <Name>Iterations</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
     <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
