@@ -217,7 +217,7 @@
         <Compile Include="PolygonalLine.fs" />
         <Content Include="Google.DataTable.Net.Wrapper.XML" />
         <Content Include="packages.config" />
-        <Compile Include="MapRunner.fs" />
+        <Compile Include="IterRunner.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
     <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />

@@ -31,14 +31,18 @@ module PolygonalLine =
 
         transform' h l []
         
-    let genLine list =
+    let genLine (list: (float*float) list) =
         let rec genList' list ans =
             match list with
             | [] -> List.rev ans
             | (x, y) :: tail ->
-                let vector = Vector2(x, y)
+                let z = float32 x
+                let t = float32 y
+                let vector = Vector2(z, t)
                 genList' tail (vector :: ans)
         genList' list []
+        
+       
             
          
       

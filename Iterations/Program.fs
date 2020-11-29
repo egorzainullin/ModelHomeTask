@@ -36,7 +36,7 @@ module Program =
     
     let iterationNumber = 10
     
-    let runner = MapRunner(line,funcWithSubstitution, h)
+    let runner = IterRunner(line,funcWithSubstitution, h)
     
     let runner2 = runner.ProcessNTimes(10)
     
