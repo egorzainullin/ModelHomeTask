@@ -6,8 +6,6 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Reverse", "Reverse\Reverse.
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Iterations", "Iterations\Iterations.fsproj", "{8FFBD204-321E-43AA-AB58-F11276A5DB40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing Console", "Testing Console\Testing Console.csproj", "{EF8A7390-F238-403A-A1D1-5E42A17F9BFF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseRepresentation", "ReverseRepresentation\ReverseRepresentation.csproj", "{F7726522-C1E6-4BDD-A543-4D0ADCD14BF0}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LogisticGrid", "LogisticGrid\LogisticGrid.fsproj", "{B8D53E05-D949-49A5-AF70-AA9952605A81}"
@@ -34,10 +32,6 @@ Global
 		{8FFBD204-321E-43AA-AB58-F11276A5DB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FFBD204-321E-43AA-AB58-F11276A5DB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FFBD204-321E-43AA-AB58-F11276A5DB40}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF8A7390-F238-403A-A1D1-5E42A17F9BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF8A7390-F238-403A-A1D1-5E42A17F9BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF8A7390-F238-403A-A1D1-5E42A17F9BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF8A7390-F238-403A-A1D1-5E42A17F9BFF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F7726522-C1E6-4BDD-A543-4D0ADCD14BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F7726522-C1E6-4BDD-A543-4D0ADCD14BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7726522-C1E6-4BDD-A543-4D0ADCD14BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
