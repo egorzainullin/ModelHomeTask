@@ -16,7 +16,6 @@ namespace IterationsRepresentation
         public Form1()
         {
             InitializeComponent();
-            button1.Click += OnButton1Click;
         }
 
         private void OnButton1Click(object sender, EventArgs e)
@@ -24,7 +23,12 @@ namespace IterationsRepresentation
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
             var str = textBox1.Text;
             var flag = Double.TryParse(str, out double parameter);
-            if (flag)
+            if (!flag)
+            {
+                MessageBox.Show(@"Incorrect input");
+                
+            }
+            else
             {
                 var vector2S = new List<Vector2>
                 {
@@ -39,10 +43,6 @@ namespace IterationsRepresentation
                 var runner1 = new IterRunner(line, func, h);
                 var runner2 = runner1.ProcessNTimes(iterNumber);
                 runner2.Show();
-            }
-            else
-            {
-                MessageBox.Show(@"Incorrect input, try again");
             }
         }
     }
