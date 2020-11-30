@@ -34,7 +34,7 @@ namespace IterationsRepresentation
                 var c = (float) parameter;
                 float h = (float) 0.01;
                 var func = Core.genCSharpFunction(c);
-                const int iterNumber = 20;
+                const int iterNumber = 40;
                 var runner1 = new IterRunner(line, func, h);
                 var runner2 = runner1.ProcessNTimes(iterNumber);
                 runner2.Show();
