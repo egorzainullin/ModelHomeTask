@@ -145,9 +145,6 @@
           <Private>True</Private>
         </Reference>
         <Reference Include="System.Numerics" />
-        <Reference Include="FSharp.Core">
-            <HintPath>..\packages\FSharp.Core.4.5.2\lib\net45\FSharp.Core.dll</HintPath>
-        </Reference>
         <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
           <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
           <Private>True</Private>
@@ -217,8 +214,8 @@
         <Compile Include="PolygonalLine.fs" />
         <Content Include="Google.DataTable.Net.Wrapper.XML" />
         <Content Include="packages.config" />
+        <Compile Include="Core.fs" />
         <Compile Include="IterRunner.fs" />
-        <Compile Include="Program.fs" />
     </ItemGroup>
     <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
 </Project>

@@ -1,20 +1,48 @@
 ﻿namespace Iterations
 
-open System
 open System.Numerics
-open Iterations
+open Microsoft.FSharp.Collections
 
 type PolygonalLine = Vector2 list                    
 
 module PolygonalLine =
-    let map f l =
-        let rec map' f l rev =
-            match l with
-            | [] -> List.rev rev
-            | h :: t -> map' f t (h :: rev)
+    let wrapLine list =
+        let rec genList' list ans =
+            match list with
+            | [] -> List.rev ans
+            | (x, y) :: tail ->
+                let z = float32 x
+                let t = float32 y
+                let vector = Vector2(z, t)
+                genList' tail (vector :: ans)
+        genList' list []
+    
+    let wrapLineCSharp (list) =
+        let rec genList' list ans =
+            match list with
+            | [] -> List.rev ans
+            | (x, y) :: tail ->
+                let z = float32 x
+                let t = float32 y
+                let vector = Vector2(z, t)
+                genList' tail (vector :: ans)
+        genList' list []
+    
+    let unwrapLine (line: PolygonalLine) =
+        let rec unwrap' line acc =
+            match line with
+            | (v: Vector2) :: tail -> unwrap' tail ((v.X, v.Y) :: acc)
+            | [] -> List.rev acc
+        unwrap' line [] 
+    
+    
+    let map (func :float32 * float32 -> float32 * float32)(line: PolygonalLine) =
+            let unwrapped1 = unwrapLine line
+            let unwrapped2 = List.map func unwrapped1
+            let wrapped = wrapLine unwrapped2
+            wrapped            
 
-        map' f l []
-
+        
     let transform h (l: PolygonalLine) =
         let rec transform' h l proc =
             match l with
@@ -31,16 +59,7 @@ module PolygonalLine =
 
         transform' h l []
         
-    let genLine (list: (float*float) list) =
-        let rec genList' list ans =
-            match list with
-            | [] -> List.rev ans
-            | (x, y) :: tail ->
-                let z = float32 x
-                let t = float32 y
-                let vector = Vector2(z, t)
-                genList' tail (vector :: ans)
-        genList' list []
+    
         
        
             

@@ -4,11 +4,14 @@ open System.Numerics
 
 open Iterations
 
+let doubleFloat32 (x, y) = (float32 x, float32 y)
+
 [<Test>]
 let ``gen list should produce correct lists`` () =
     let list =
         [ (1.0, 2.0); (3.0, 4.0); (5.0, 6.0) ]
-        |> PolygonalLine.genLine
+        |> List.map doubleFloat32
+        |> PolygonalLine.wrapLine
 
     let actual =
         [ (1.0, 2.0); (3.0, 4.0); (5.0, 6.0) ]
@@ -19,10 +22,12 @@ let ``gen list should produce correct lists`` () =
  
 let h = float32 0.01
 
-let func = Program.funcWithSubstitution
+let c = (float32)2.0
 
-let line1 = PolygonalLine.genLine [ (1.0, 2.0); (3.0, 4.0); (5.0, 6.0) ]
-let line2 = PolygonalLine.genLine [ (1.0, 0.0); (3.0, 0.0); (5.0, 0.0) ]
+let func = Core.funcWithSubstitution c
+
+let line1 = [ (1.0, 2.0); (3.0, 4.0); (5.0, 6.0) ] |> List.map doubleFloat32 |> PolygonalLine.wrapLine
+let line2 = [ (1.0, 0.0); (3.0, 0.0); (5.0, 0.0) ] |> List.map doubleFloat32 |> PolygonalLine.wrapLine
 
 [<Test>]
 let ``process should change line``() =

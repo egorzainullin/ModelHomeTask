@@ -1,27 +1,40 @@
 ﻿namespace Iterations
 
-type IterRunner(
-               line: PolygonalLine,
-               func: (float32 * float32 -> float32 * float32),
-               h: float32 
-           ) =
-    class
-        member this.Line = line
-        
+open System.Numerics
+open XPlot.Plotly
+
+type IterRunner(line: PolygonalLine, func: ((float32 * float32) -> (float32 * float32)), h: float32) =
+    class        
+        let ``process`` (line) =
+            let line1 = (PolygonalLine.map func line)
+            let line2 = PolygonalLine.transform h line1
+            IterRunner(line2, func, h)
+
+        member  this.Line = line
+
         member this.H = h
-        
-        member this.Process() =
-            let line' = (PolygonalLine.map func line)
-            let line'' = PolygonalLine.transform h line'
-            IterRunner(line'', func, h)
-            
+
+        member this.Process() = ``process`` (this.Line)
+
         member this.ProcessNTimes(n: int) =
             let rec processNTimes line k =
-                if k = 0 then line
+                if k = 0 then
+                    IterRunner(line, func, h)
                 else
-                    let newLine = this.Process().Line
+                    let newLine = (``process`` line).Line
                     processNTimes newLine (k - 1)
-            let newLine = processNTimes line n
-            IterRunner(newLine, func, h)
-    end
 
+            processNTimes line n
+
+
+        member this.Show() =
+            let scatter = Core.toScatter line
+
+            let chart =
+                scatter
+                |> Chart.Plot
+                |> Chart.WithHeight(500)
+                |> Chart.WithWidth(500)
+
+            Chart.Show chart
+    end
