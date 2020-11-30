@@ -1,5 +1,6 @@
 ﻿namespace Iterations
 
+open System.Collections.Generic
 open System.Numerics
 open Microsoft.FSharp.Collections
 
@@ -52,10 +53,10 @@ module PolygonalLine =
                 let d = (a - b).Length()
                 let extraDelta = d - h
                 if extraDelta < (float32) 0.0 then
-                    List.rev (b :: a :: proc)
+                     transform' h (b :: proc) (a :: proc)
                 else
                     let c = (a + b) / (float32) 2.0
-                    transform' h tail (List.rev (b :: c :: a :: proc))
+                    transform' h (b :: tail) ((c :: a :: proc))
 
         transform' h l []
         

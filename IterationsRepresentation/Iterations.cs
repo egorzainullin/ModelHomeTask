@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
@@ -34,10 +35,14 @@ namespace IterationsRepresentation
                 var c = (float) parameter;
                 float h = (float) 0.01;
                 var func = Core.genCSharpFunction(c);
-                const int iterNumber = 40;
+                const int iterNumber = 10;
                 var runner1 = new IterRunner(line, func, h);
                 var runner2 = runner1.ProcessNTimes(iterNumber);
                 runner2.Show();
+            }
+            else
+            {
+                MessageBox.Show(@"Incorrect input, try again");
             }
         }
     }
