@@ -20,7 +20,7 @@ module Core =
 
     let rec isInMandelbrotSet (z, c, iter, count) =
         if (cMin <=! z) && (z <=! cMax) && (count < iter)
-        then isInMandelbrotSet (((z * z) + c), c, iter, (count + 1))
+        then isInMandelbrotSet (((z * z * z) + c), c, iter, (count + 1))
         else count
 
     let scalingFactor s = s * 1.0 / 200.0
@@ -33,9 +33,9 @@ module Core =
         complex fx fy
 
     let colorize c =
-        let r = 255 - 10 * c
+        let r = 20
         let g = 0
-        let b = (8 * c) % 256
+        let b = (20 * c) % 256
         Color.FromArgb(r, g, b)
 
     let createImage (s, mx, my, iter) =
