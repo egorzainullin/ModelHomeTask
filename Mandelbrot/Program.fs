@@ -20,7 +20,7 @@ module Core =
 
     let rec isInMandelbrotSet (z, c, iter, count) =
         if (cMin <=! z) && (z <=! cMax) && (count < iter)
-        then isInMandelbrotSet (((z * z) + c), c, iter, (count + 1))
+        then isInMandelbrotSet (((z * z * z) + c), c, iter, (count + 1))
         else count
 
     let scalingFactor s = s * 1.0 / 200.0
