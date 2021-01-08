@@ -33,9 +33,9 @@ module Core =
         complex fx fy
 
     let colorize c =
-        let r = 255 - 10 * c
+        let r = 20
         let g = 0
-        let b = (8 * c) % 256
+        let b = (20 * c) % 256
         Color.FromArgb(r, g, b)
 
     let createImage (s, mx, my, iter) =

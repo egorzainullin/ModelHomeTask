@@ -59,7 +59,7 @@ module PolygonalLine =
                 let d = (wrappedFunc(a) - wrappedFunc(b)).Length()
                 let extraDelta = d - h
                 if extraDelta < (float32) 0.0 then
-                     transform' h (b :: proc) (a :: proc)
+                     transform' h (b :: tail) (a :: proc)
                 else
                     let c = (a + b) / (float32) 2.0
                     transform' h (b :: tail) ((c :: a :: proc))
