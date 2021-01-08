@@ -42,15 +42,21 @@ module PolygonalLine =
             let unwrapped2 = List.map func unwrapped1
             let wrapped = wrapLine unwrapped2
             wrapped            
-
+    
         
-    let transform h (l: PolygonalLine) =
+    let transform (func: float32 * float32 -> float32 * float32) h (l: PolygonalLine) =
+        let vectorApply (func: float32 * float32 -> float32 * float32) (vector: Vector2) =
+            let unwrappedVector = (vector.X, vector.Y)
+            let applied = func unwrappedVector
+            let wrapped = Vector2(fst applied, snd applied)
+            wrapped
+        let wrappedFunc = vectorApply func
         let rec transform' h l proc =
             match l with
             | [] -> List.rev proc
             | [ x ] -> List.rev (x :: proc)
             | (a: Vector2) :: (b: Vector2) :: tail ->
-                let d = (a - b).Length()
+                let d = (wrappedFunc(a) - wrappedFunc(b)).Length()
                 let extraDelta = d - h
                 if extraDelta < (float32) 0.0 then
                      transform' h (b :: proc) (a :: proc)

@@ -21,12 +21,10 @@ module Core =
     *)
     
     let funcWithParameter c (xn: float32, yn: float32) = (xn + yn + c * sin(xn), yn + c * sin(xn))
-    
+        
     let unzipVectors line = List.map (unzipVector2) line |> List.unzip 
     
     let funcWithSubstitution c = funcWithParameter c
-    
-    let genCSharpFunction c = funcWithParameter c  
     
     let toScatter (line: PolygonalLine): Scatter =
         let (xs, ys) = unzipVectors line

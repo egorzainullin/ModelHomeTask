@@ -6,8 +6,8 @@ open XPlot.Plotly
 type IterRunner(line: PolygonalLine, func: ((float32 * float32) -> (float32 * float32)), h: float32) =
     class        
         let ``process`` (line) =
-            let line1 = (PolygonalLine.map func line)
-            let line2 = PolygonalLine.transform h line1
+            let func = Iterations.Core.vectorApply 
+            let line2 = PolygonalLine.transform func h line
             IterRunner(line2, func, h)
 
         member  this.Line = line
