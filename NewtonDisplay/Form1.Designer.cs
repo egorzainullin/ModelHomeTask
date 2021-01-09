@@ -1,4 +1,4 @@
-﻿namespace ReverseRepresentation
+﻿namespace NewtonDisplay
 {
     partial class Form1
     {
@@ -29,43 +29,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Start = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Start
+            // button1
             // 
-            this.Start.Location = new System.Drawing.Point(304, 367);
-            this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(100, 37);
-            this.Start.TabIndex = 2;
-            this.Start.Text = "Start";
-            this.Start.UseVisualStyleBackColor = true;
-            this.Start.Click += new System.EventHandler(this.OnStartClick);
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(133, 176);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(435, 68);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Метод обратных итераций для уравнения:  z^2 + c. \r\n\r\n\r\n\r\n";
+            this.button1.Location = new System.Drawing.Point(294, 175);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(224, 82);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Start";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.OnButton1Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 603);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Start);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Reverse";
+            this.Text = "Form1";
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Button Start;
-
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
 
         #endregion
     }

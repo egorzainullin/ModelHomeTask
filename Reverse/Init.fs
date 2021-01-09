@@ -4,7 +4,7 @@ open System.Numerics
 open MathNet.Numerics
 open XPlot.Plotly
 
-let defaultC = Complex.zero
+let defaultC = Complex.Zero
 
 let iterNumber = 12
 

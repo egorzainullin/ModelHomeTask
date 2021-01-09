@@ -17,13 +17,12 @@ type ReverseRunner() =
             | (Some a, Some b) -> Some((a, b))
             | _ -> None
 
-        let drawPlot (text1, text2) =
-            match getValuesTextBoxes text1 text2 with
-            | Some (re, im) ->
+        let drawPlot (c, z0) =
+           
                 let k = Init.iterNumber
 
                 let complexPoints =
-                    Core.getPreImageNumberK (Core.complex re im) Init.start k
+                    Core.getPreImageNumberK c Init.start k
 
                 let (rs, is) =
                     complexPoints
@@ -41,9 +40,10 @@ type ReverseRunner() =
 
                 Chart.Show chart
                 0 |> ignore
-            | None -> MessageBox.Show("Incorrect input") |> ignore
 
-        member this.Run(text1, text2) =
-            drawPlot(text1, text2)
+        member this.Run() =
+            let c = Init.defaultC
+            let z0 = Init.defaultZ0
+            drawPlot(c, z0)
     end
 

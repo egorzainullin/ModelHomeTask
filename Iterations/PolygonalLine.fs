@@ -18,17 +18,6 @@ module PolygonalLine =
                 genList' tail (vector :: ans)
         genList' list []
     
-    let wrapLineCSharp (list) =
-        let rec genList' list ans =
-            match list with
-            | [] -> List.rev ans
-            | (x, y) :: tail ->
-                let z = float32 x
-                let t = float32 y
-                let vector = Vector2(z, t)
-                genList' tail (vector :: ans)
-        genList' list []
-    
     let unwrapLine (line: PolygonalLine) =
         let rec unwrap' line acc =
             match line with
@@ -62,9 +51,12 @@ module PolygonalLine =
                      transform' h (b :: tail) (a :: proc)
                 else
                     let c = (a + b) / (float32) 2.0
-                    transform' h (b :: tail) ((c :: a :: proc))
+                    transform' h (a :: c:: b :: tail) proc
 
         transform' h l []
+        
+        
+                
         
     
         

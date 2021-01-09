@@ -14,9 +14,7 @@ namespace ReverseRepresentation
         private void OnStartClick(object sender, EventArgs e)
         {
             var runner = new ReverseRunner();
-            var text1 = textBox1.Text;
-            var text2 = textBox2.Text;
-            runner.Run(text1, text2);
+            runner.Run();
         }
     }
 }

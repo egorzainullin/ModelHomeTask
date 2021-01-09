@@ -26,6 +26,8 @@ module Core =
     
     let funcWithSubstitution c = funcWithParameter c
     
+    let genCSharpFunction(c) = funcWithParameter c
+    
     let toScatter (line: PolygonalLine): Scatter =
         let (xs, ys) = unzipVectors line
         Scatter(x = xs, y = ys, mode="markers")
