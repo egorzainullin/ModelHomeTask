@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterationsRepresentation", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewtonDisplay", "NewtonDisplay\NewtonDisplay.csproj", "{6121D83E-D82C-421D-9C31-DAE0E09E9839}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogisticGridDisplay", "LogisticGridDisplay\LogisticGridDisplay.csproj", "{50AA2C1C-504A-46E4-BED7-BFC8DBABAE76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +62,9 @@ Global
 		{6121D83E-D82C-421D-9C31-DAE0E09E9839}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6121D83E-D82C-421D-9C31-DAE0E09E9839}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6121D83E-D82C-421D-9C31-DAE0E09E9839}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50AA2C1C-504A-46E4-BED7-BFC8DBABAE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50AA2C1C-504A-46E4-BED7-BFC8DBABAE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50AA2C1C-504A-46E4-BED7-BFC8DBABAE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50AA2C1C-504A-46E4-BED7-BFC8DBABAE76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
