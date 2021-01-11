@@ -34,7 +34,7 @@ let calculateNewState(gn: double, cp: double, (arr: float[,])) =
         for j in [0..127] do
             let dX = deltaX arr i j
             let oldX = arr.[i, j]
-            let mutable newValue = 4.0 * gn / 1000.0 * oldX * (1.0-oldX) + cp * (dX - oldX)
+            let mutable newValue = 4.0 * gn / 1000.0 * oldX * (1.0-oldX) + cp / 1000.0 * (dX - oldX)
             if newValue > 1.0 then newValue <- 1.0
             if newValue < 0.0 then newValue <- 0.0
             copiedArray.[i, j] <- newValue
@@ -43,9 +43,10 @@ let calculateNewState(gn: double, cp: double, (arr: float[,])) =
             
 let toRGB (value: double) =
     match value with
-    | value when value <= 1.0/3.0 -> "blue"
-    | value when value <= 2.0/3.0 -> "yellow"
-    | _ -> "green"
+    | value when value <= 1.0/4.0 -> "rgb(0, 0, 0)"
+    | value when value <= 2.0/4.0 -> "rgn(64, 64, 0)"
+    | value when value <= 3.0/4.0 -> "rgb(127, 127, 0)" 
+    | _ -> "rgb(255, 255)"
     
 let pointsWithColor(arr): string[,] = Array2D.map (toRGB) arr
 
@@ -57,10 +58,14 @@ let filter color element =
     | (_, _, c) -> color = c
     
 let list(arr) = loadList(arr)    
-let list1(arr) = list(arr) |> List.filter (filter "blue") |> List.map (fun (x, y, _) -> x, y)
+let list1(arr) = list(arr) |> List.filter (filter "rgb(0, 0, 0)") |> List.map (fun (x, y, _) -> x, y)
 
-let list2(arr) = list(arr) |> List.filter (filter "yellow") |> List.map (fun (x, y, _) -> x, y)
+let list2(arr) = list(arr) |> List.filter (filter "rgn(64, 64, 0)") |> List.map (fun (x, y, _) -> x, y)
 
-let list3(arr) = list(arr) |> List.filter (filter "green") |> List.map (fun (x, y, _) -> x, y)
+let list3(arr) = list(arr) |> List.filter (filter "rgb(127, 127, 0)") |> List.map (fun (x, y, _) -> x, y)
+
+let list4(arr) = list(arr) |> List.filter (filter "rgb(255, 255)") |> List.map (fun (x, y, _) -> x, y)
+
+
 
     
