@@ -47,19 +47,20 @@ let toRGB (value: double) =
     | value when value <= 2.0/3.0 -> "yellow"
     | _ -> "green"
     
-let pointsWithColor = Array2D.map (toRGB) arr
+let pointsWithColor(arr): string[,] = Array2D.map (toRGB) arr
 
-let list = [ for i in [0..127] do
-                 for j in [0..127] ->  (i, j, pointsWithColor.[i,j])]
+let loadList(arr) = [ for i in [0..127] do
+                        for j in [0..127] ->  (i, j, pointsWithColor(arr).[i,j])]
 
 let filter color element =
     match element with
     | (_, _, c) -> color = c
     
-let list1 = list |> List.filter (filter "blue") |> List.map (fun (x, y, _) -> x, y)
+let list(arr) = loadList(arr)    
+let list1(arr) = list(arr) |> List.filter (filter "blue") |> List.map (fun (x, y, _) -> x, y)
 
-let list2 = list |> List.filter (filter "yellow") |> List.map (fun (x, y, _) -> x, y)
+let list2(arr) = list(arr) |> List.filter (filter "yellow") |> List.map (fun (x, y, _) -> x, y)
 
-let list3 = list |> List.filter (filter "green") |> List.map (fun (x, y, _) -> x, y)
+let list3(arr) = list(arr) |> List.filter (filter "green") |> List.map (fun (x, y, _) -> x, y)
 
     

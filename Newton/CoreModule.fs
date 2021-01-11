@@ -30,7 +30,7 @@ let nf2 = nf a2
 
 let h = 0.05
 
-let epsilon = 0.5
+let epsilon = 0.01
 
 let min = -1.0
 

@@ -32,6 +32,10 @@ namespace LogisticGridDisplay
                     var drawing = new global::Program.Drawing(gn, cp, iterNumber);
                     drawing.Draw();
                 }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
                 
             }
             else

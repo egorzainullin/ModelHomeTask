@@ -7,7 +7,6 @@ type Runner() =
         member this.Run() =
             let f1 = CoreModule.nf1
             let f2 = CoreModule.nf2
-            let e = f1(Complex(0.0, 0.0))
             let func1 = f1 >> f1
             let func2 = f2 >> f2 >> f2 >> f2
             let matrix = CoreModule.createMatrix
